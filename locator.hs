@@ -42,3 +42,6 @@ deriving instance Ord Turn
 test :: Bool
 test = (sort . nub  $ [findTurn d1 d2 | d1 <- range, d2 <- range]) == range
 
+main = do
+  putStr "Locator test: "
+  print test
