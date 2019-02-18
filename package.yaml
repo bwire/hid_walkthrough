@@ -37,3 +37,12 @@ executables:
     showexpr:
         main: expr/showexpr.hs
         dependencies: hint >=0.7 && <0.10
+
+# Chapter 3
+    stockquotes:
+        source-dirs: stockquotes
+        main: Main.hs
+        other-extensions:
+          - OverloadedStrings
+        dependencies:
+          - text >=1.2 && <1.3
