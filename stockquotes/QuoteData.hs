@@ -1,6 +1,3 @@
-{-# LANGUAGE RecordWildCards #-}
-{-# LANGUAGE OverloadedStrings #-}
-
 module QuoteData where
 
 import Data.Fixed (HasResolution (..), Fixed)
