@@ -1,4 +1,4 @@
-module QuoteData where
+module QuoteData (QuoteData(..)) where
 
 import Data.Fixed (HasResolution (..), Fixed)
 import Data.Time(Day, defaultTimeLocale, parseTimeOrError)

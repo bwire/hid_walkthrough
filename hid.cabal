@@ -6,16 +6,15 @@
 
 name:           hid
 version:        0.1
-synopsis:       Haskell in Depth" book walkthrough
+synopsis:       "Haskell in Depth" walkthrough
 description:    Haskell in Depth" book walkthrough
 category:       Code for studuing
-homepage:       https://github.com/bravit/hid-examples#readme
-bug-reports:    https://github.com/bravit/hid-examples/issues
+homepage:       https://github.com/bwire/hid_walkthrough#readme
+bug-reports:    https://github.com/bwire/hid_walkthrough/issues
 author:         barbedwire
-maintainer:     Vitaly Bragilevsky <vit.bragilevsky@gmail.com>
+maintainer:     barbedwire (e.barbedwire@gmail.com)
 license:        BSD3
 license-file:   LICENSE
-tested-with:    GHC == 8.2.2, GHC == 8.4.3
 build-type:     Simple
 cabal-version:  >= 1.10
 extra-source-files:
@@ -74,6 +73,7 @@ executable stockquotes
   main-is: Main.hs
   other-modules:
       QuoteData
+    , Params
   hs-source-dirs:
       stockquotes
   default-extensions: 
