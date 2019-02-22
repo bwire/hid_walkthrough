@@ -1,8 +1,12 @@
 module QuoteData (QuoteData(..)) where
 
+import Data.ByteString.Char8 (unpack)
 import Data.Fixed (HasResolution (..), Fixed)
-import Data.Time(Day, defaultTimeLocale, parseTimeOrError)
+import Data.Time(Day, defaultTimeLocale, parseTimeOrError, parseTimeM)
 import qualified Data.Text as T
+import GHC.Generics (Generic)
+import Safe (readDef)
+import Data.Csv (FromNamedRecord, FromField (..))
 
 data E4
   
@@ -11,6 +15,12 @@ instance HasResolution E4 where
 
 type Fixed4 = Fixed E4
 
+instance FromField Fixed4 where
+  parseField = return . readDef 0 . unpack
+
+instance FromField Day where
+  parseField = parseTimeM False defaultTimeLocale "%Y/%m/%d" . unpack 
+
 data QuoteData = QuoteData {
   day :: Day, 
   close :: Fixed4,
@@ -18,7 +28,16 @@ data QuoteData = QuoteData {
   open :: Fixed4,
   high :: Fixed4,
   low :: Fixed4
-}
+} deriving (Generic, FromNamedRecord)
+
+data QField = Open | Close | High | Low | Volume
+
+field2fun :: QField -> QuoteData -> Fixed4
+field2fun Open = open
+field2fun Close = close
+field2fun High = high
+field2fun Low = low
+field2fun Volume = volume
 
 text2Quotes :: T.Text -> [QuoteData]
 text2Quotes = map (mkQuote . toComponents) . tail . T.lines
