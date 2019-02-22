@@ -36,6 +36,7 @@ source-repository head
 
 executable locator
   main-is: locator.hs
+  hs-source-dirs: src
   build-depends:
       base >=4.10 && <4.13
   default-language: Haskell2010
@@ -50,6 +51,7 @@ executable showexpr
 
 executable vocab1
   main-is: vocab1.hs
+  hs-source-dirs: src
   build-depends:
       base >=4.10 && <4.13
     , text >=1.2 && <1.3
@@ -57,6 +59,7 @@ executable vocab1
 
 executable vocab2
   main-is: vocab2.hs
+  hs-source-dirs: src
   build-depends:
       base >=4.10 && <4.13
     , text >=1.2 && <1.3
@@ -64,6 +67,7 @@ executable vocab2
 
 executable vocab3
   main-is: vocab3.hs
+  hs-source-dirs: src
   build-depends:
       base >=4.10 && <4.13
     , text >=1.2 && <1.3
