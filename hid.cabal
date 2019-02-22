@@ -80,7 +80,7 @@ executable stockquotes
     , Params
     , BoundedEnum
   hs-source-dirs:
-      stockquotes
+      src/stockquotes
   default-extensions: 
       RecordWildCards
     , OverloadedStrings
