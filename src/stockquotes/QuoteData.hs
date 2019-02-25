@@ -1,4 +1,4 @@
-module QuoteData (QuoteData(..)) where
+module QuoteData (QuoteData(..), QField(..), Fixed4) where
 
 import Data.ByteString.Char8 (unpack)
 import Data.Fixed (HasResolution (..), Fixed)

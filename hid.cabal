@@ -79,6 +79,7 @@ executable stockquotes
       QuoteData
     , Params
     , BoundedEnum
+    , Statistics
   hs-source-dirs:
       src/stockquotes
   default-extensions: 
