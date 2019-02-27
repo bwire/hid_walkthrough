@@ -1,4 +1,9 @@
-module QuoteData (QuoteData(..), QField(..), Fixed4) where
+module QuoteData (
+  QuoteData(..), 
+  QField(..), 
+  Fixed4, 
+  field2fun
+) where
 
 import Data.ByteString.Char8 (unpack)
 import Data.Fixed (HasResolution (..), Fixed)
