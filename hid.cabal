@@ -80,6 +80,7 @@ executable stockquotes
     , Params
     , BoundedEnum
     , Statistics
+    , StatReport
   hs-source-dirs:
       src/stockquotes
   default-extensions: 
