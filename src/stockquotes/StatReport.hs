@@ -2,6 +2,7 @@ module StatReport (statReport) where
 
 import Fmt
 import Data.Fixed (showFixed)
+import Data.Text 
 
 import Statistics
 import QuoteData
@@ -20,5 +21,11 @@ showStatEntryValue StatEntry {..} = showFixed (removeTrailing stat qField) value
     removeTrailing Max Volume = True
     removeTrailing _ _ = False
 
+instance Buildable StatEntry where
+  build se@StatEntry {..} = ""+|stat|+": "+|showStatEntryValue se|+""
 
-statReport = undefined
+instance Buildable StatQFieldData where
+  build (qf, stats) = nameF ("Statistics for " +||qf||+ "") $ unlinesF stats
+
+statReport :: StatInfo -> Text
+statReport = fmt . unlinesF
