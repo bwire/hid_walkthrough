@@ -1,6 +1,7 @@
 module Main where
 
 import Data.Text
+import Data.Foldable
 
 import Params
 import QuoteData
@@ -20,9 +21,6 @@ statInfo = undefined
 
 statReport :: StatInfo -> Text
 statReport = undefined
-
-plotCharts :: Params -> QuoteDataCollection -> IO ()
-plotCharts = undefined
 
 main :: IO ()
 main = undefined
