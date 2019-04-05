@@ -1,4 +1,4 @@
-module Charts (plotCharts) where
+module Charts (plotChart) where
 
 import Data.Foldable (traverse_, toList)
 import Graphics.Rendering.Chart.Easy (plot, line, (.=), layout_title)
@@ -6,8 +6,8 @@ import Graphics.Rendering.Chart.Backend.Diagrams (toFile, loadSansSerifFonts, Fi
 
 import QuoteData
 
-plotCharts :: (Functor t, Foldable t) => String -> t QuoteData -> [QField] -> FilePath -> IO ()
-plotCharts title quotes qfs fName = toFile fileOptions fName $ do
+plotChart :: (Functor t, Foldable t) => String -> t QuoteData -> [QField] -> FilePath -> IO ()
+plotChart title quotes qfs fName = toFile fileOptions fName $ do
     layout_title .= title
     traverse_ plotLine qfs
   where

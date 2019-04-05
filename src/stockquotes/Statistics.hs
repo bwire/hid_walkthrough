@@ -1,4 +1,4 @@
-module Statistics (Statistic(..), StatEntry(..), StatInfo(..), StatQFieldData) where
+module Statistics (Statistic(..), StatEntry(..), StatInfo(..), StatQFieldData, statInfo) where
 
 import Control.Applicative
 import Data.Ord (comparing)
