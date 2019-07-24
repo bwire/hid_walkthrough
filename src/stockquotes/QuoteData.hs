@@ -2,7 +2,10 @@
 
 module QuoteData (
   Fixed4,
-  text2Quotes
+  QuoteData(..),
+  QField(..),
+  text2Quotes,
+  field2Fun
 ) where
 
 import Data.Fixed (HasResolution (..), Fixed)
@@ -35,9 +38,9 @@ instance FromField Day where
 instance FromField Fixed4 where
   parseField = pure . readDef 0 . unpack
 
-data QData = Open | Close | High | Low | Volume deriving (Show)
+data QField = Open | Close | High | Low | Volume deriving (Show)
 
-field2Fun :: QData -> QuoteData -> Fixed4
+field2Fun :: QField -> QuoteData -> Fixed4
 field2Fun Open = open
 field2Fun Close = close
 field2Fun High = high
