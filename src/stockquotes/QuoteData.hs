@@ -15,6 +15,7 @@ import GHC.Generics (Generic)
 import Data.Csv (FromNamedRecord, FromField(..))
 import Safe(readDef)
 import Data.ByteString.Char8 (unpack)
+import BoundedEnum
 
 data E4
   
@@ -38,7 +39,8 @@ instance FromField Day where
 instance FromField Fixed4 where
   parseField = pure . readDef 0 . unpack
 
-data QField = Open | Close | High | Low | Volume deriving (Show)
+data QField = Open | Close | High | Low | Volume 
+  deriving (Show, Eq, Enum, Bounded, BoundedEnum)
 
 field2Fun :: QField -> QuoteData -> Fixed4
 field2Fun Open = open

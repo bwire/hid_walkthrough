@@ -1,4 +1,8 @@
-module Statistics () where
+module Statistics (
+  Statistic(..),
+  StatEntry(..),
+  StatQFieldData
+) where
 
 import Data.Time (diffDays)
 import Data.Ord (comparing)
@@ -35,3 +39,7 @@ computeStatistic Mean = funcByField mean
 computeStatistic Min = funcByField minimum
 computeStatistic Max = funcByField maximum 
 computeStatistic Days = daysBetween
+
+statInfo :: (Functor t, Foldable t) => t QuoteData -> StatInfo
+statInfo quotes = map stQFData range where
+  stQFData qf = (qf, [StatEntry st qf v | st <- range, let v = computeStatistic st qf quotes])
