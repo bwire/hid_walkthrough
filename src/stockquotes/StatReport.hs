@@ -4,7 +4,7 @@ import Fmt
 import Data.Text (Text)
 import Data.Fixed (showFixed)
 import QuoteData (QField(..))
-import Statistics (Statistic(..), StatEntry(..), StatQFieldData)
+import Statistics (Statistic(..), StatEntry(..), StatQFieldData, StatInfo)
 
 instance Buildable Statistic where
   build Mean = "Mean"
