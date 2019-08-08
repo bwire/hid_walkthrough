@@ -1,4 +1,4 @@
-module Charts () where
+module Charts (plotChart) where
 
 import QuoteData
 import Data.Foldable(traverse_, toList)

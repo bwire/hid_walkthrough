@@ -1,4 +1,4 @@
-module StatReport () where
+module StatReport (statReport) where
 
 import Fmt
 import Data.Text (Text)

@@ -2,7 +2,8 @@ module Statistics (
   Statistic(..),
   StatEntry(..),
   StatQFieldData,
-  StatInfo
+  StatInfo,
+  statInfo
 ) where
 
 import Data.Time (diffDays)
