@@ -23,7 +23,7 @@ instance Buildable StatEntry where
   build se@StatEntry {..} = "" +|stat|+ ": " +|showStatEntryValue se|+ ""
 
 instance Buildable StatQFieldData where
-  build (qf, stats) = nameF ("Statistic for " +||qf||+ ": ") $ unlinesF stats 
+  build (qf, stats) = nameF ("Statistic for " +||qf||+ "") $ unlinesF stats 
 
 statReport :: StatInfo -> Text
 statReport = fmt . unlinesF
