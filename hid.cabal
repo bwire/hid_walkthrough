@@ -104,3 +104,19 @@ executable stockquotes
     , bytestring >=0.10 && <0.11
     , optparse-applicative >=0.14 && <0.15
   default-language: Haskell2010
+
+executable maybe
+  main-is: maybe.hs
+  hs-source-dirs: src
+  build-depends:
+      base >=4.10 && <4.13
+    , safe >=0.3 && <0.4
+  default-language: Haskell2010
+
+executable reader
+  main-is: reader.hs
+  hs-source-dirs: src
+  build-depends:
+      base >=4.10 && <4.13
+    , mtl >=2.0 && <2.3
+  default-language: Haskell2010
