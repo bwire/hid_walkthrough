@@ -32,4 +32,4 @@ game n = counts <$> replicateM n (winner <$> gameRound)
   where counts = map (\xs@(x:_) -> (x, length xs)) . group . sort
 
 main :: IO ()
-main = newStdGen >>= evalState (game 10) >>= print
+main = newStdGen >>= print . evalState (game 10)

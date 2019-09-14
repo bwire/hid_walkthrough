@@ -155,3 +155,11 @@ executable weapons
     , random >=1.0 && <1.2
   default-language: Haskell2010
 
+executable shunting-yard
+  main-is: expr/shunting-yard.hs
+  build-depends:
+      base >=4.10 && <4.13
+    , mtl >=2.0 && <2.3
+  default-language: Haskell2010
+
+
