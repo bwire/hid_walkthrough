@@ -41,14 +41,6 @@ executable locator
       base >=4.10 && <4.13
   default-language: Haskell2010
 
-executable showexpr
-  main-is: expr/showexpr.hs
-  build-depends:
-      base >=4.10 && <4.13
-    , hint >= 0.7
-    , filepath <= 1.4.1.2
-  default-language: Haskell2010
-
 executable vocab1
   main-is: vocab1.hs
   hs-source-dirs: src
@@ -71,6 +63,14 @@ executable vocab3
   build-depends:
       base >=4.10 && <4.13
     , text >=1.2 && <1.3
+  default-language: Haskell2010
+
+executable shunting-yard
+  main-is: shunting-yard.hs
+  hs-source-dirs: src
+  build-depends:
+      base >=4.10 && <4.13
+    , mtl >=2.0 && <2.3
   default-language: Haskell2010
 
 executable stockquotes
@@ -155,11 +155,11 @@ executable weapons
     , random >=1.0 && <1.2
   default-language: Haskell2010
 
-executable shunting-yard
-  main-is: expr/shunting-yard.hs
-  build-depends:
-      base >=4.10 && <4.13
-    , mtl >=2.0 && <2.3
-  default-language: Haskell2010
-
-
+executable genSQL
+    main-is: genSQL.hs
+    hs-source-dirs: src
+    build-depends:
+        base >=4.10 && <4.13
+      , mtl >=2.0 && <2.3
+      , text >=1.2 && <1.3
+    default-language: Haskell2010
