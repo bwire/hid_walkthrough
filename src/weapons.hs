@@ -1,37 +1,52 @@
+{-# LANGUAGE InstanceSigs #-}
+
 import System.Random
 import Control.Monad.State
 import Data.List (group, sort)
 
-data Weapons = Rock | Paper | Scissors
-  deriving (Eq, Enum, Bounded)
+data Weapon = Rock | Paper | Scissors
+  deriving (Eq, Bounded, Enum, Ord, Show)
+
+instance Random Weapon where
+  randomR :: RandomGen g => (Weapon, Weapon) -> g -> (Weapon, g) 
+  randomR (a, b) g = case randomR (fromEnum a, fromEnum b) g of
+    (v, g') -> (toEnum v, g')
+  
+  random :: RandomGen g => g -> (Weapon, g)
+  random = randomR (minBound, maxBound)
+
 
 data Winner = First | Second | Draw
-  deriving (Eq, Ord, Show)
+  deriving (Show, Eq, Ord)
 
-instance Random Weapons where
-  randomR (a, b) g = 
-    case randomR (fromEnum a, fromEnum b) g of 
-      (r, g1) -> (toEnum r, g1)
-  random = randomR (minBound, maxBound) 
+winner :: (Weapon, Weapon) -> Winner
+winner (Paper, Rock) = First
+winner (Scissors, Paper) = First
+winner (Rock, Scissors) = First
+winner (w1, w2)
+  | w1 == w2 = Draw
+  | otherwise = Second
 
-winner :: (Weapons, Weapons) -> Winner
-winner (Rock, Paper) = Second
-winner (Paper, Scissors) = Second
-winner (Scissors, Rock) = Second
-winner (w1, w2) = if (w1 == w2) then Draw else First
-
-randomWeapon :: State StdGen Weapons
+randomWeapon :: State StdGen Weapon
 randomWeapon = state random
 
-gameRound :: State StdGen (Weapons, Weapons)
-gameRound = (,) <$> randomWeapon <*> randomWeapon
+gameRound :: State StdGen (Weapon, Weapon)
+gameRound = do
+  w1 <- randomWeapon
+  w2 <- randomWeapon
+  return (w1, w2)
 
-game :: Int -> State StdGen [(Winner, Int)]
-game n = counts <$> replicateM n (winner <$> gameRound)
-  where counts = map ((,) <$> head <*> length) . group . sort
+gameRound' :: State StdGen (Weapon, Weapon)
+gameRound' = (,) <$> randomWeapon <*> randomWeapon
+
+-- game :: Int -> State StdGen [[Weapon]]
+game n = counts <$> replicateM n (winner <$> gameRound) 
+  where 
+    counts = fmap hl . group . sort
+    hl = (,) <$> head <*> length
 
 main :: IO ()
 main = do
   g <- newStdGen
-  let r = evalState (game 10) g 
+  let r = evalState (game 30) g
   print r
