@@ -180,3 +180,10 @@ executable dicegame
     , mtl >=2.0 && <2.3
     , random >=1.0 && <1.2
   default-language: Haskell2010
+
+executable ioref
+  main-is: ioref.hs
+  hs-source-dirs: ch05
+  build-depends:
+      base >=4.10 && <4.13
+  default-language: Haskell2010
