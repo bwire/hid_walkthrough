@@ -1,6 +1,6 @@
 import Data.Foldable (traverse_)
 import System.Environment (getArgs)
-import System.Directory.Extra (listContents, doesDirectoryExist)
+import System.Directory.Extra (listContents, doesDirectoryExist, listFilesRecursive)
 import Control.Monad.Extra (whenM, ifM, zipWithM_)
 import Data.IORef (IORef, newIORef, modifyIORef', readIORef)
 
@@ -18,6 +18,9 @@ fileCount fpath = do
 
     inc :: IORef Int -> IO ()
     inc cnt = modifyIORef' cnt (+1)
+
+fileCount' :: FilePath -> IO Int
+fileCount' = (length <$>) . listFilesRecursive
 
 main :: IO ()
 main = do
