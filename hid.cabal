@@ -209,3 +209,12 @@ executable countzeros
   build-depends:
       base >=4.10 && <4.13
   default-language: Haskell2010
+
+executable evalrpn1
+  main-is: evalrpn1.hs
+  hs-source-dirs: expr/rpn
+  ghc-options: -Wall
+  build-depends:
+      base >=4.10 && <4.13
+    , mtl >=2.0 && <2.3
+  default-language: Haskell2010
