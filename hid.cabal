@@ -38,14 +38,14 @@ executable locator
   main-is: locator.hs
   hs-source-dirs: ch02
   build-depends:
-      base >=4.10 && <4.13
+      base >=4.12 && <4.15
   default-language: Haskell2010
 
 executable vocab1
   main-is: vocab1.hs
   hs-source-dirs: ch01
   build-depends:
-      base >=4.10 && <4.13
+      base >=4.12 && <4.15
     , text >=1.2 && <1.3
   default-language: Haskell2010
 
@@ -53,7 +53,7 @@ executable vocab2
   main-is: vocab2.hs
   hs-source-dirs: ch01
   build-depends:
-      base >=4.10 && <4.13
+      base >=4.12 && <4.15
     , text >=1.2 && <1.3
   default-language: Haskell2010
 
@@ -61,7 +61,7 @@ executable vocab3
   main-is: vocab3.hs
   hs-source-dirs: ch01
   build-depends:
-      base >=4.10 && <4.13
+      base >=4.12 && <4.15
     , text >=1.2 && <1.3
   default-language: Haskell2010
 
@@ -69,7 +69,7 @@ executable shunting-yard
   main-is: shunting-yard.hs
   hs-source-dirs: expr
   build-depends:
-      base >=4.10 && <4.13
+      base >=4.12 && <4.15
     , mtl >=2.0 && <2.3
   default-language: Haskell2010
 
@@ -92,7 +92,7 @@ executable stockquotes
     , DeriveAnyClass
     , FlexibleInstances
   build-depends:
-      base >=4.10 && <4.13
+      base >=4.12 && <4.15
     , Chart >=1.8 && <1.10
     , Chart-diagrams >=1.8 && <1.10
     , blaze-html >=0.9 && <0.10
@@ -109,7 +109,7 @@ executable maybe
   main-is: maybe.hs
   hs-source-dirs: ch05
   build-depends:
-      base >=4.10 && <4.13
+      base >=4.12 && <4.15
     , safe >=0.3 && <0.4
   default-language: Haskell2010
 
@@ -117,7 +117,7 @@ executable reader
   main-is: reader.hs
   hs-source-dirs: ch05
   build-depends:
-      base >=4.10 && <4.13
+      base >=4.12 && <4.15
     , mtl >=2.0 && <2.3
   default-language: Haskell2010
 
@@ -125,7 +125,7 @@ executable sqllike
   main-is: sqllike.hs
   hs-source-dirs: ch05
   build-depends:
-      base >=4.10 && <4.13
+      base >=4.12 && <4.15
     , mtl >=2.0 && <2.3
     , text >=1.2 && <1.3
   default-language: Haskell2010
@@ -134,7 +134,7 @@ executable gcd
   main-is: gcd.hs
   hs-source-dirs: ch05
   build-depends:
-      base >=4.10 && <4.13
+      base >=4.12 && <4.15
     , mtl >=2.0 && <2.3
   default-language: Haskell2010
 
@@ -142,7 +142,7 @@ executable stateexample
   main-is: stateexample.hs
   hs-source-dirs: ch05
   build-depends:
-      base >=4.10 && <4.13
+      base >=4.12 && <4.15
     , mtl >=2.0 && <2.3
   default-language: Haskell2010
 
@@ -150,7 +150,7 @@ executable weapons
   main-is: weapons.hs
   hs-source-dirs: ch02
   build-depends:
-      base >=4.10 && <4.13
+      base >=4.12 && <4.15
     , mtl >=2.0 && <2.3
     , random >=1.0 && <1.2
   default-language: Haskell2010
@@ -159,7 +159,7 @@ executable genSQL
     main-is: genSQL.hs
     hs-source-dirs: ch05
     build-depends:
-        base >=4.10 && <4.13
+        base >=4.12 && <4.15
       , mtl >=2.0 && <2.3
       , text >=1.2 && <1.3
     default-language: Haskell2010
@@ -168,7 +168,7 @@ executable sumlist
   main-is: sumlist.hs
   hs-source-dirs: ch05
   build-depends:
-      base >=4.10 && <4.13
+      base >=4.12 && <4.15
     , mtl >=2.0 && <2.3
   default-language: Haskell2010
 
@@ -176,7 +176,7 @@ executable dicegame
   main-is: dicegame.hs
   hs-source-dirs: ch05
   build-depends:
-      base >=4.10 && <4.13
+      base >=4.12 && <4.15
     , mtl >=2.0 && <2.3
     , random >=1.0 && <1.2
   default-language: Haskell2010
@@ -185,14 +185,14 @@ executable ioref
   main-is: ioref.hs
   hs-source-dirs: ch05
   build-depends:
-      base >=4.10 && <4.13
+      base >=4.12 && <4.15
   default-language: Haskell2010
 
 executable filecount
   main-is: filecount.hs
   hs-source-dirs: ch05
   build-depends:
-      base >=4.10 && <4.13
+      base >=4.12 && <4.15
     , extra >=1.5 && <1.8
   default-language: Haskell2010
 
@@ -200,21 +200,55 @@ executable stref
   main-is: stref.hs
   hs-source-dirs: ch05
   build-depends:
-      base >=4.10 && <4.13
+      base >=4.12 && <4.15
   default-language: Haskell2010
 
 executable countzeros
   main-is: countzeros.hs
   hs-source-dirs: ch05
   build-depends:
-      base >=4.10 && <4.13
+      base >=4.12 && <4.15
   default-language: Haskell2010
 
 executable evalrpn1
   main-is: evalrpn1.hs
   hs-source-dirs: expr/rpn
-  ghc-options: -Wall
+  ghc-options: -Wall -Werror
   build-depends:
-      base >=4.10 && <4.13
+      base >=4.12 && <4.15
     , mtl >=2.0 && <2.3
   default-language: Haskell2010
+
+executable evalrpn2
+  main-is: evalrpn2.hs
+  other-modules:
+      EvalRPNTrans
+  hs-source-dirs: expr/rpn
+  ghc-options: -Wall -Werror
+  build-depends:
+      base >=4.12 && <4.15
+    , mtl >=2.0 && <2.3
+  default-language: Haskell2010
+
+executable du
+  main-is: Main.hs
+  other-modules:
+    AppTypes
+    AppRWST
+    Utils
+  hs-source-dirs:
+      du
+  default-extensions: RecordWildCards NamedFieldPuns OverloadedStrings
+  other-extensions: GeneralizedNewtypeDeriving
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12 && <4.15
+    , directory >=1.3 && <1.4
+    , extra >=1.5 && <1.8
+    , filepath >=1.4.1 && <1.5
+    , mtl >=2.0 && <2.3
+    , optparse-applicative >=0.14 && <0.17
+    , text >=1.2 && <1.3
+    , text-show >=3.0 && <4
+    , unix-compat >=0.5 && <0.6
+  default-language: Haskell2010  
