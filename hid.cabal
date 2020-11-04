@@ -233,8 +233,11 @@ executable evalrpn2
 executable du
   main-is: Main.hs
   other-modules:
+    App
     AppTypes
     AppRWST
+    DirTree
+    FileCounter
     Utils
   hs-source-dirs:
       du

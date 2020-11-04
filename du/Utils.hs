@@ -26,3 +26,11 @@ traverseDirectoryWith app = do
                 depth = depth env + 1
               }
    
+traverseDirectoryWith' :: MyApp le s () -> MyApp le s ()
+traverseDirectoryWith' app = asks path >>= liftIO . listDirectory >>= traverse_ go
+  where
+    go name = flip local app
+      $ \env -> env {
+        path = path env </> name,
+        depth = depth env + 1
+    }
