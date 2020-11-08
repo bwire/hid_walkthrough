@@ -238,6 +238,7 @@ executable du
     AppRWST
     DirTree
     FileCounter
+    DiskUsage
     Utils
   hs-source-dirs:
       du

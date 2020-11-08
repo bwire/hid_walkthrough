@@ -34,3 +34,6 @@ traverseDirectoryWith' app = asks path >>= liftIO . listDirectory >>= traverse_ 
         path = path env </> name,
         depth = depth env + 1
     }
+
+checkExtension :: AppConfig -> FilePath -> Bool
+checkExtension cfg fp = maybe True (`isExtensionOf` fp) (extension cfg)

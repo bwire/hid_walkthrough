@@ -4,9 +4,6 @@ import System.Directory.Extra (listFiles)
 import App
 import Utils
 
-checkExtension :: AppConfig -> FilePath -> Bool
-checkExtension cfg fp = maybe True (`isExtensionOf` fp) (extension cfg)
-
 fileCount :: MyApp (FilePath, Int) s ()
 fileCount = do
   AppEnv {..} <- ask
